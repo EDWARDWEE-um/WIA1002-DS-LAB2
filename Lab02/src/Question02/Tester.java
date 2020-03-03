@@ -5,8 +5,6 @@
  */
 package Question02;
 
-import java.lang.reflect.Array;
-
 /**
  *
  * @author wic190050
