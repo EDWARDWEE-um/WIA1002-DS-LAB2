@@ -16,13 +16,14 @@ public class TextFileLog<T extends Comparable<T>> implements SimpleLog<T> {
     private int index, maxsize;
 
     public TextFileLog(int maxsize) {
+        this.maxsize = maxsize;
         log = (T[]) new Comparable[this.maxsize];
         this.index = -1;
-        this.maxsize = maxsize;
     }
 
     @Override
     public void insert(T t) {
+        
         if (!isFull()) {
             index++;
             log[index] = t;
@@ -53,17 +54,19 @@ public class TextFileLog<T extends Comparable<T>> implements SimpleLog<T> {
 
     @Override
     public void clear() {
+        System.out.println("Clear the text file log");
         for(int i=0;i<=index;i++){
             log[i]=(T) null;
             index=-1;
         }
     }
+    @Override
     public String toString(){
         String str ="";
         for(int i =0; i<=index;i++){
-            str += log[i]+" ";
+            str += log[i]+"\n";
         }
-            return str;
+            return "Create a text file log with maximum record equal to "+this.maxsize+"\n"+"Text File Log Size "+this.maxsize+"\n"+str;
     }
 
 }

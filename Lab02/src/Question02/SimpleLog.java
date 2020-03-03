@@ -21,5 +21,6 @@ public interface SimpleLog<T> {
 
     public void clear();
 
+    @Override
     public String toString();
 }

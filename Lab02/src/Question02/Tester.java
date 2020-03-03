@@ -20,6 +20,18 @@ public class Tester {
         a.insert("Ramesh");
         a.insert("John");
         System.out.println(a.toString());
+        System.out.println("Adding another record");
+        a.insert("abu");
+        
+        String name = "Siti";
+        System.out.println("Searching for "+name+" in the file");
+        if(a.search(name)){
+            System.out.println("Text File Log contains "+name);
+        }
+        else
+            System.out.println("Text File Log does not contains "+name);
+        a.clear();
+        System.out.println("Text File Log Size "+a.size());
     }
    
 }
